@@ -1,5 +1,6 @@
 import React from 'react';
 import { Board } from '../logic/board';
+import { Ship } from '../logic/ships';
 
 function GameBoard({ board, onCellClick, onCellHover, previewCells, selectedShip, isHorizontal, showShips, gameState }) {
   const renderCell = (row, col) => {
@@ -23,10 +24,9 @@ function GameBoard({ board, onCellClick, onCellHover, previewCells, selectedShip
     // Preview placement
     if (previewCells && previewCells.some(([r, c]) => r === row && c === col)) {
       if (selectedShip) {
-        const tempShip = new (require('../logic/ships').Ship)(selectedShip, 
+        const tempShip = new Ship(selectedShip,
           previewCells[0][0], previewCells[0][1], isHorizontal);
-        const tempBoard = new Board();
-        if (tempBoard.canPlaceShip(tempShip)) {
+        if (board.canPlaceShip(tempShip)) {
           cellClass += ' preview';
         } else {
           cellClass += ' preview-invalid';

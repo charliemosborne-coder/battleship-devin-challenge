@@ -60,12 +60,9 @@ function App() {
       isHorizontal
     };
 
-    const tempGame = new Game();
-    tempGame.setupPlayerShips(placedShips);
-    
     const newShip = new Ship(selectedShip, row, col, isHorizontal);
-    
-    if (tempGame.playerBoard.placeShip(newShip)) {
+
+    if (game.playerBoard.placeShip(newShip)) {
       const newPlacedShips = [...placedShips, ship];
       setPlacedShips(newPlacedShips);
       
