@@ -70,6 +70,7 @@ function App() {
       if (newPlacedShips.length === ALL_SHIPS.length) {
         game.setupPlayerShips(newPlacedShips);
         setGameState('playing');
+        setSelectedShip(null);
         showMessage('All ships placed! Game starts!', 'success');
       } else {
         const nextShip = ALL_SHIPS.find(s => !newPlacedShips.some(p => p.shipType.name === s.name));
@@ -147,6 +148,8 @@ function App() {
     setPlacedShips(ships);
     game.setupPlayerShips(ships);
     setGameState('playing');
+    setSelectedShip(null);
+    setPreviewCells([]);
     showMessage('Ships placed randomly!', 'success');
   };
 
