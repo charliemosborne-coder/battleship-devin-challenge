@@ -169,7 +169,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Battleship</h1>
+      <h1>Charlie's Battleship</h1>
       
       {message && (
         <div className={`status ${messageType}`}>
@@ -220,7 +220,7 @@ function App() {
 
       {gameState === 'gameover' && (
         <div className={`game-over ${game.getWinner() === 'player' ? 'winner' : 'loser'}`}>
-          <h2>{game.getWinner() === 'player' ? 'You Win!' : 'Computer Wins!'}</h2>
+          <h2>{game.getWinner() === 'player' ? 'You Win the Hole!' : 'Computer Wins the Hole!'}</h2>
           <button onClick={handlePlayAgain}>Play Again</button>
         </div>
       )}
