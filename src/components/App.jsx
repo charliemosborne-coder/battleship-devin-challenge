@@ -3,6 +3,7 @@ import { Game } from '../logic/game';
 import { SHIP_TYPES, ALL_SHIPS, Ship } from '../logic/ships';
 import GameBoard from './GameBoard';
 import ShipPlacement from './ShipPlacement';
+import Graveyard from './Graveyard';
 import './App.css';
 
 function App() {
@@ -203,6 +204,7 @@ function App() {
             showShips={true}
             gameState={gameState}
           />
+          <Graveyard title="Your Ship Graveyard" ships={game.playerBoard.ships} />
           <ShotHistory title="Computer's Shots" shots={game.shotHistory.computer} />
         </div>
 
@@ -214,6 +216,7 @@ function App() {
             showShips={false}
             gameState={gameState}
           />
+          <Graveyard title="Computer's Ship Graveyard" ships={game.computerBoard.ships} />
           <ShotHistory title="Your Shots" shots={game.shotHistory.player} />
         </div>
       </div>
