@@ -171,7 +171,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Charlie's Battleship</h1>
+      <h1>Bunker Battle</h1>
       
       {message && (
         <div className={`status ${messageType}`}>
@@ -205,7 +205,7 @@ function App() {
             showShips={true}
             gameState={gameState}
           />
-          <Graveyard title="Your Ship Graveyard" ships={game.playerBoard.ships} />
+          <Graveyard title="Your Clubs in Bunker" ships={game.playerBoard.ships} />
           <ShotHistory title="Computer's Shots" shots={game.shotHistory.computer} />
         </div>
 
@@ -217,7 +217,7 @@ function App() {
             showShips={false}
             gameState={gameState}
           />
-          <Graveyard title="Computer's Ship Graveyard" ships={game.computerBoard.ships} />
+          <Graveyard title="Computer's Clubs in Bunker" ships={game.computerBoard.ships} />
           <ShotHistory title="Your Shots" shots={game.shotHistory.player} />
         </div>
       </div>
