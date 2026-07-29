@@ -22,7 +22,7 @@ function GameBoard({ board, onCellClick, onCellHover, previewCells, selectedShip
     }
 
     // Preview placement
-    if (previewCells && previewCells.some(([r, c]) => r === row && c === col)) {
+    if (gameState === 'setup' && previewCells && previewCells.some(([r, c]) => r === row && c === col)) {
       if (selectedShip) {
         const tempShip = new Ship(selectedShip,
           previewCells[0][0], previewCells[0][1], isHorizontal);
