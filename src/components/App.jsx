@@ -191,7 +191,7 @@ function App() {
 
       <div className="board-container">
         <div className="board-section">
-          <h2>Your Board</h2>
+          <h2>Your Board {game.isPlayerTurn && gameState === 'playing' && <span className="turn-indicator"></span>}</h2>
           <GameBoard
             board={game.playerBoard}
             onCellClick={handleCellClick}
@@ -207,7 +207,7 @@ function App() {
         </div>
 
         <div className="board-section">
-          <h2>Computer's Board</h2>
+          <h2>Computer's Board {!game.isPlayerTurn && gameState === 'playing' && <span className="turn-indicator"></span>}</h2>
           <GameBoard
             board={game.computerBoard}
             onCellClick={handleCellClick}
