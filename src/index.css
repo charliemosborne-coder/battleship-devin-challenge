@@ -232,24 +232,72 @@ button.danger:hover {
   border-left-color: #3498db;
 }
 
-.game-over {
+.game-over-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.game-over-screen.winner {
+  background: linear-gradient(160deg, #3ec46d 0%, #1f8a45 100%);
+}
+
+.game-over-screen.loser {
+  background: #000;
+}
+
+.game-over-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
   padding: 2rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin: 2rem 0;
 }
 
-.game-over h2 {
-  color: #2c3e50;
+.game-over-content h2 {
+  color: #fff;
+  font-size: 2.5rem;
 }
 
-.game-over.winner h2 {
-  color: #27ae60;
+.game-over-subtitle {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
-.game-over.loser h2 {
-  color: #e74c3c;
+.game-over-content button {
+  margin-top: 1rem;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 16px;
+  border-radius: 2px;
+  animation-name: confetti-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
 }
 
 .graveyard {

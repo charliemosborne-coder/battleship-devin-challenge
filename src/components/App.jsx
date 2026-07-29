@@ -4,6 +4,7 @@ import { SHIP_TYPES, ALL_SHIPS, Ship } from '../logic/ships';
 import GameBoard from './GameBoard';
 import ShipPlacement from './ShipPlacement';
 import Graveyard from './Graveyard';
+import GameOverScreen from './GameOverScreen';
 import './App.css';
 
 function App() {
@@ -219,10 +220,10 @@ function App() {
       </div>
 
       {gameState === 'gameover' && (
-        <div className={`game-over ${game.getWinner() === 'player' ? 'winner' : 'loser'}`}>
-          <h2>{game.getWinner() === 'player' ? 'You Win!' : 'Computer Wins!'}</h2>
-          <button onClick={handlePlayAgain}>Play Again</button>
-        </div>
+        <GameOverScreen
+          isWinner={game.getWinner() === 'player'}
+          onPlayAgain={handlePlayAgain}
+        />
       )}
 
       {gameState !== 'gameover' && (
