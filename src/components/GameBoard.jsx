@@ -47,7 +47,7 @@ function GameBoard({ board, onCellClick, onCellHover, previewCells, selectedShip
         onMouseEnter={() => onCellHover && onCellHover(row, col)}
       >
         {shot === 'hit' && <span className="golf-ball" />}
-        {shot === 'miss' && 'O'}
+        {shot === 'miss' && 'OB'}
         {!shot && !(showShips && ship) && <span className="flag-pin" aria-hidden="true">⛳</span>}
       </div>
     );
